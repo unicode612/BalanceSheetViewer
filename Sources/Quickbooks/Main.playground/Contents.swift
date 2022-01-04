@@ -1,6 +1,18 @@
-import Foundation
+import UIKit
 
-// MARK: - BalanceSheetModel
+if let url = Bundle.main.url(forResource: "balanceSheet", withExtension: "json") {
+    do {
+        let data = try Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        let jsonData = try decoder.decode(BalanceSheetModel.self, from: data)
+        print(jsonData)
+    } catch {
+        print("error:\(error)")
+    }
+}
+
+
+// MARK: - BSModel
 struct BalanceSheetModel: Decodable {
     let header: BSModelHeader
     let rows: BSModelRows

@@ -1,6 +1,6 @@
 import Foundation
 
-// MARK: - BalanceSheetModel
+// MARK: - BSModel
 struct BalanceSheetModel: Decodable {
     let header: BSModelHeader
     let rows: BSModelRows
